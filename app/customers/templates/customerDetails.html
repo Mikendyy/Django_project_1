@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<ul class="list-group">
+    <li class="list-group-item active">Customer Details:</li>
+    <li class="list-group-item">id: {{object.id}}</li>
+    <li class="list-group-item">name: {{object.name}}</li>
+    <li class="list-group-item">age: {{object.age}}</li>
+    <li class="list-group-item">city: {{object.city}}</li>
+    <li class="list-group-item">create: {{object.create}}</li>
+    <li class="list-group-item">email: {{object.email}}</li>
+    <li class="list-group-item">business: {{object.business}}</li>
+</ul>
+{% endblock %}

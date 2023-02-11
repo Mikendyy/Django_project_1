@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+{% if not request.user.is_authenticated%}
+You don't have permission!
+<form method="post" >
+    {% csrf_token %}
+    {{ form }}
+    <button type="button" class="btn btn-primary">Submit</button>
+</form>
+{% else %}
+<form method="post" >
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endif %}
+{% endblock %}

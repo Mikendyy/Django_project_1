@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block main_content%}
+
+<table class="table table-dark">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>age</th>
+        <th>city</th>
+        <th>create</th>
+        <th>Email</th>
+        <th>business</th>
+        <th>Details</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    {%for i in customer_list%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.city}}</td>
+        <td>{{i.create}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.business}}</td>
+        <td><a href="{% url 'customer-details-link' pk=i.pk %}">Details</a></td>
+        <td><a href="{% url 'customer-update-link' pk=i.pk %}">Update</a></td>
+        <td><a href="{% url 'customer-delete-link' pk=i.pk %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
